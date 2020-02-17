@@ -59,6 +59,7 @@ class Sorter_interface:
             rect_height = random.randint(0,500)
             self.tab_values.append(rect_height)
             self.myCanvas.create_rectangle(i*rect_width,500-rect_height,(i-1)*rect_width,500,fill='blue')
+        self.myCanvas.update_idletasks()
 
     def swap(self,index1,index2):
         tmp = self.tab_values[index1]
@@ -101,6 +102,7 @@ class Sorter_interface:
         self.sleep_delay = 0.01
         self.quicksort_algorithm(0,scale_value-1)
         self.redraw_canvas([])
+        self.myScale.config(state=NORMAL)
 
     def bubblesort_algorithm(self,len):
         sorted = False
@@ -119,6 +121,7 @@ class Sorter_interface:
         self.sleep_delay = 0.00001
         self.bubblesort_algorithm(scale_value)
         self.redraw_canvas([])
+        self.myScale.config(state=NORMAL)
 
     def selectionsort_algorithm(self,len):
         for i in range(len):
@@ -134,6 +137,7 @@ class Sorter_interface:
         self.sleep_delay = 0.05
         self.selectionsort_algorithm(scale_value)
         self.redraw_canvas([])
+        self.myScale.config(state=NORMAL)
 
     def insertionsort_algorithm(self,len):
         for i in range(1,len):
@@ -151,6 +155,7 @@ class Sorter_interface:
         self.sleep_delay = 0.05
         self.insertionsort_algorithm(scale_value)
         self.redraw_canvas([])
+        self.myScale.config(state=NORMAL)
 
 root = Tk()
 root.title('Visual sorter')
